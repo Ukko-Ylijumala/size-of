@@ -296,14 +296,50 @@ impl_tuple! {
 
 // Implement SizeOf for different calling conventions for functions with up to
 // 16 arguments
+#[cfg(target_arch = "aarch64")]
+impl_function_ptrs! {
+    "C",
+    "Rust",
+    "system",
+}
+
+#[cfg(target_arch = "arm")]
 impl_function_ptrs! {
     "C",
     "Rust",
     "aapcs",
+    "system",
+}
+
+#[cfg(any(target_arch = "powerpc", target_arch = "powerpc64"))]
+impl_function_ptrs! {
+    "C",
+    "Rust",
+    "system",
+}
+
+#[cfg(any(target_arch = "wasm32", target_arch = "wasm64"))]
+impl_function_ptrs! {
+    "C",
+    "Rust",
+    "system",
+}
+
+#[cfg(target_arch = "x86")]
+impl_function_ptrs! {
+    "C",
+    "Rust",
     "cdecl",
-    "win64",
-    "sysv64",
     "system",
     "stdcall",
     "fastcall",
+}
+
+#[cfg(target_arch = "x86_64")]
+impl_function_ptrs! {
+    "C",
+    "Rust",
+    "win64",
+    "sysv64",
+    "system",
 }
