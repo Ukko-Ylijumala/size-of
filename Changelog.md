@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 <!-- next-header -->
+## [0.1.7] - 2025-12-08
+
+## Added
+
+- Extra author
+
+## Changed
+
+- Nothing
+
+## Fixed
+
+- Use wasm32+wasm64 targets in arch/wasm.rs instead of (deprecated?) "wasm"
+- Split impl_function_ptrs into different target_arch cfg blocks to explicitly allow only valid calling conventions for each.
+- Fixes compiler error E0570 in Rust v1.89+.
+
 ## [Unreleased] - ReleaseDate
 
 - Implemented `SizeOf` for `core::ffi::c_void`
@@ -70,6 +86,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support for the [`chrono`](https://docs.rs/chrono) crate under the `chrono` feature
 
 <!-- next-url -->
+[0.1.7]: https://github.com/Ukko-Ylijumala/size-of/releases/tag/v0.1.7
 [Unreleased]: https://github.com/Kixiron/size-of/compare/v0.1.5...HEAD
 [0.1.5]: https://github.com/Kixiron/size-of/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/Kixiron/size-of/compare/v0.1.3...v0.1.4

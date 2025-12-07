@@ -1,8 +1,8 @@
 [package]
 name = "size-of"
-version = "0.1.5"
+version = "0.1.7"
 description = "A crate for measuring the total memory usage of an object"
-authors = ["Chase Wilson <me@chasewilson.dev>"]
+authors = ["Chase Wilson <me@chasewilson.dev>", "Mikko Tanner <mikko.tanner@gmail.com>"]
 license = "MIT OR Apache-2.0"
 edition = "2021"
 readme = "README.md"
