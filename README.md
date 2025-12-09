@@ -26,3 +26,7 @@ A crate for measuring the total memory usage of an object at runtime
   - `xxhash-xxh3`: Enables support for `xxhhash-rust`'s `xxh3` feature
 - `bigdecimal`: Enables support for the [`bigdecimal`](https://docs.rs/bigdecimal) crate
 - `num-bigint`: Enables support for the [`num-bigint`](https://docs.rs/num-bigint) crate
+---
+This fork is meant to address a compiler error E0570 in Rust v1.89+. More specifically, certain calling conventions being defined outside their architectures became a hard error and consequently, macro `impl_function_ptrs` had to be split into different target_arch cfg blocks to explicitly allow only valid calling conventions for each. See for example:
+- https://github.com/Kixiron/size-of/issues/6
+- https://github.com/rust-lang/rust/pull/142134#issuecomment-2954187670
